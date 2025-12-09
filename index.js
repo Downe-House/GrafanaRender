@@ -10,7 +10,7 @@ app.get("/grafana/panel", async (req, res) => {
     return res.status(400).send("Missing uid or panel");
   }
 
-  const grafanaUrl = `https://YOURSTACK.grafana.net/render/d-solo/${uid}/${panel}?width=1500&height=800`;
+  const grafanaUrl = `https://downehouse.grafana.net/render/d-solo/${uid}/${panel}?width=1500&height=800`;
 
   try {
     const response = await fetch(grafanaUrl, {
