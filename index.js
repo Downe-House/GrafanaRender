@@ -1,5 +1,4 @@
 const express = require("express");
-const fetch = require("node-fetch"); // If using Node 18+ you can remove this and use global fetch
 
 const app = express();
 
