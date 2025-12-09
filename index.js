@@ -23,6 +23,12 @@ app.get("/grafana/panel", async (req, res) => {
       return res.status(response.status).send("Failed to fetch panel from Grafana");
     }
 
+    if (req.query.debug) {
+  const text = await response.text();
+  console.log("GRAFANA RESP >>>", text);
+  return res.send(text);
+}
+
     const buffer = Buffer.from(await response.arrayBuffer());
 
     res.set("Content-Type", "image/png");
